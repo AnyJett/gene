@@ -101,7 +101,7 @@ if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
 
     # windows环境常用’/‘来表示相对路径，’\‘来表示绝对路径（需要用\转义）
-    parent = 'C:\code\py\\anaconda\gene\second\Samples_22April_night'
+    parent = 'C:\code\py\\anaconda\gene\second\data\Samples_22April_night'
 
     # 标准表头
     metadata = ['Filename', 'Analysis time', 'type', '50Cr', '51V', '52Cr', '52.925', '54Cr', '55Mn', '57Fe',
@@ -114,7 +114,7 @@ if __name__ == '__main__':
     pre_df = np.array(metadata).reshape(1, len(metadata))
     header_df = pd.DataFrame(pre_df, columns=metadata)
     log.info("Create excel with header.")
-    header_df.to_excel(excel_name, columns=metadata, header=False, sheet_name='merge',engine='openpyxl', index=False)
+    header_df.to_excel(excel_name, columns=metadata, header=False, sheet_name='merge', engine='openpyxl', index=False)
 
     # 写数据要求关闭excel，否则会报错
     for file_name in os.listdir(parent):
