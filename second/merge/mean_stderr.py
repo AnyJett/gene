@@ -101,7 +101,7 @@ if __name__ == '__main__':
     pd.set_option('display.max_columns', None)
 
     # windows环境常用’/‘来表示相对路径，’\‘来表示绝对路径（需要用\转义）
-    parent = 'C:\code\py\\anaconda\gene\second\data\Samples_22April_night'
+    parent = 'C:\python_code\gene\data\Samples_22April_night'
 
     # 标准表头
     metadata = ['Filename', 'Analysis time', 'type', '50Cr', '51V', '52Cr', '52.925', '54Cr', '55Mn', '57Fe',
