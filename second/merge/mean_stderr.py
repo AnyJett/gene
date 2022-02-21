@@ -111,10 +111,14 @@ if __name__ == '__main__':
     excel_name = 'excel_output.xlsx'
 
     # 先创建一个带表头的excel
-    pre_df = np.array(metadata).reshape(1, len(metadata))
-    header_df = pd.DataFrame(pre_df, columns=metadata)
+    # pre_df = np.array(metadata).reshape(1, len(metadata))
+    # header_df = pd.DataFrame(pre_df, columns=metadata)
+    # log.info("Create excel with header.")
+    # header_df.to_excel(excel_name, columns=metadata, header=False, sheet_name='merge', engine='openpyxl', index=False)
+
+    header_df = pd.DataFrame(columns=metadata)
     log.info("Create excel with header.")
-    header_df.to_excel(excel_name, columns=metadata, header=False, sheet_name='merge', engine='openpyxl', index=False)
+    header_df.to_excel(excel_name, sheet_name='merge', engine='openpyxl', index=False)
 
     # 写数据要求关闭excel，否则会报错
     for file_name in os.listdir(parent):
